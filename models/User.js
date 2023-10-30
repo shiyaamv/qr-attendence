@@ -26,7 +26,7 @@ const userSchema = new Schema({
     attendance: [
        {
             date: {
-                type: Date,
+                type: Number,
             },
             isPresent: {
                 type: Boolean,

@@ -180,25 +180,34 @@ catch(error){
 })
 app.post("/attendance",async(req,res)=>{
    const {rollno}=req.body;
+   console.log(rollno);
    const studentupdate=await UserModel.findOne({"rollno":rollno});
-   console.log(Date(Date.now()).toString().substring(0,15).trim())
-   console.log(Date(studentupdate.attendance.date).toString().substring(0,15).trim())
-   // if(Date(Date.now()).toString().substring(0,15).trim()==Date(studentupdate.attendance.date).toString().substring(0,15).trim()){
-   //    console.log("1234")
-   //    return res.send(`<p>ALREADY ATTENDANCE REGISTERED FOR YOU TODAY</p>`)
-   // }
-
-   if(studentupdate){
-      studentupdate.attendance.push({
-         isPresent: true,
-         date:Date.now(),
-     });
-     await studentupdate.save();
-      res.send(`<p>ATTENDANCE REGISTERED FOR<b> ${rollno}</b> on <b>${Date(Date.now()).toString().substring(0,24).trim()}</b></p>`)
+   var k=new Date();
+      k.setHours(0,0,0,0);
+      k=k.getTime()
+   if(studentupdate.attendance.length==0){ 
+      
+      console.log("studentupdate.attendance.length==0",k);
+         studentupdate.attendance.push({
+         isPresent:true,
+         date:k
+      })
+      res.send("<p>ATTENDANCE MARKED</p>")
+   }
+   else if((studentupdate.attendance[studentupdate.attendance.length-1]).date==k){
+      console.log("studentupdate.attendance[studentupdate.attendance.length-1]==k")
+         res.send("<p>ALREADY ATTENDANCE MARKED FOR TODAY</p>");
    }
    else{
-      res.send("<p>ERROR</p>")
+      console.log("else")
+      console.log((studentupdate.attendance[studentupdate.attendance.length-1])==k,(studentupdate.attendance[studentupdate.attendance.length-1]),k)
+      studentupdate.attendance.push({
+         isPresent:true,
+         date:k
+      }) 
+      res.send("<p>ATTENDANCE MARKED</p>")
    }
+studentupdate.save();
 })
 
 //end of form handling
