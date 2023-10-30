@@ -181,12 +181,17 @@ catch(error){
 app.post("/attendance",async(req,res)=>{
    const {rollno}=req.body;
    const studentupdate=await UserModel.findOne({"rollno":rollno});
-if(Date(Date.now()).toString().substring(0,15).trim()===Date(studentupdate.attendance.date).toString().substring(0,15).trim()){
-   res.send(`<p>ALREADY ATTENDANCE REGISTERED FOR YOU TODAY</p>`)
-}
+   console.log(Date(Date.now()).toString().substring(0,15).trim())
+   console.log(Date(studentupdate.attendance.date).toString().substring(0,15).trim())
+   // if(Date(Date.now()).toString().substring(0,15).trim()==Date(studentupdate.attendance.date).toString().substring(0,15).trim()){
+   //    console.log("1234")
+   //    return res.send(`<p>ALREADY ATTENDANCE REGISTERED FOR YOU TODAY</p>`)
+   // }
+
    if(studentupdate){
       studentupdate.attendance.push({
-         isPresent: true
+         isPresent: true,
+         date:Date.now(),
      });
      await studentupdate.save();
       res.send(`<p>ATTENDANCE REGISTERED FOR<b> ${rollno}</b> on <b>${Date(Date.now()).toString().substring(0,24).trim()}</b></p>`)
