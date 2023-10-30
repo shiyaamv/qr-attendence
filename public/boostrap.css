@@ -1622,16 +1622,16 @@
       -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
     .form-control::-webkit-input-placeholder {
-      color: #6c757d;
+      color: #1f1f38;
       opacity: 1; }
     .form-control:-ms-input-placeholder {
-      color: #6c757d;
+      color: #1f1f38;
       opacity: 1; }
     .form-control::-ms-input-placeholder {
-      color: #6c757d;
+      color: #1f1f38;
       opacity: 1; }
     .form-control::placeholder {
-      color: #6c757d;
+      color: #1f1f38;
       opacity: 1; }
     .form-control:disabled, .form-control[readonly] {
       background-color: #e9ecef;
@@ -8139,11 +8139,14 @@
     font-weight: normal;
     background: #0c0c0c;
     color: #666666; }
-  
+  ::placeholder{
+    color: black;
+  }
   a {
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
     transition: .3s all ease;
+    text-decoration: none;
     color: #bc9864; }
     a:hover, a:focus {
       text-decoration: none !important;
@@ -8192,16 +8195,16 @@
     padding-right: 20px; }
     .form-control::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
-      color: rgba(255, 255, 255, 0.3) !important; }
+      color: #1f1f38 !important; }
     .form-control::-moz-placeholder {
       /* Firefox 19+ */
-      color: rgba(255, 255, 255, 0.3) !important; }
+      color: #1f1f38 !important; }
     .form-control:-ms-input-placeholder {
       /* IE 0+ */
-      color: rgba(255, 255, 255, 0.3) !important; }
+      color: #1f1f38 !important; }
     .form-control:-moz-placeholder {
       /* Firefox 18- */
-      color: rgba(255, 255, 255, 0.3) !important; }
+      color: #1f1f38 !important; }
     .form-control:focus, .form-control:active {
       border-color: #bc9864 !important;
       background: rgba(255, 255, 255, 0.1); }
@@ -8227,7 +8230,7 @@
       margin-bottom: 0; }
       .dbox p span {
         font-weight: 500;
-        color: #bc9864;
+        color:#4db5ff;
         display: block; }
       .dbox p a {
         color: rgba(255, 255, 255, 0.8); }
@@ -8235,7 +8238,7 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: #bc9864;
+      background: #4db5ff;
       margin: 0 auto;
       margin-bottom: 20px; }
       .dbox .icon span {
@@ -8243,7 +8246,12 @@
         color: #000; }
     .dbox .text {
       width: 100%; }
-  
+ .touch{
+  color:  #4db5ff;
+ }
+ .gapheight{
+  height: 50px;
+ } 
   .btn {
     padding: 12px 16px;
     cursor: pointer;
@@ -8270,14 +8278,17 @@
       -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
       box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important; }
     .btn.btn-primary {
-      background: #bc9864 !important;
-      border-color: #bc9864 !important;
+      background: #4db5ff!important;
       color: #000;
       text-transform: uppercase;
-      font-weight: 600; }
+      font-weight: 600; 
+      height: 45px;
+    }
       .btn.btn-primary:hover, .btn.btn-primary:focus {
-        border-color: #a57f48 !important;
-        background: #a57f48 !important; }
+        background: #4db5ff !important; 
+      border-radius: 1rem;
+      transition: all 400ms ease;
+    }
   
   .contactForm .label {
     color: #fff;
@@ -8321,3 +8332,7 @@
     font-size: 16px;
     font-weight: 500; }
   
+.form-control{
+  color: #1f1f38 important;
+
+}
