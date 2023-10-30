@@ -23,9 +23,18 @@ const userSchema = new Schema({
         type:String,
         required:true
     },
-    orderstate:{
-        type:String,
-    },
+    attendance: [
+        {
+            date: {
+                type: Date,
+                default: Date.now
+            },
+            isPresent: {
+                type: Boolean,
+                default: false
+            }
+        }
+    ]
 
 },{timestamps:true})
 

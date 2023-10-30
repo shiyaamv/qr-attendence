@@ -136,6 +136,7 @@ app.post("/register",async(req,res)=>{
    if(user){
       return res.redirect("/login?error=userexists")
    }
+   
    var qrsrc=await generateQR(roll);
     user= new UserModel({
       name:name,
@@ -176,10 +177,15 @@ catch(error){
 }
   
 })
-app.post("/dashboard/details",async(req,res)=>{
+app.post("/attendance",async(req,res)=>{
    const {rollno}=req.body;
-   console.log(rollno)
-   await UserModel.findOneAndUpdate({"rollno":rollno},)
+   const update=await UserModel.findOneAndUpdate({"rollno":rollno},{$set:{"attendance.isPresent":true}})
+   if(update){
+      res.send(`<p>ATTENDANCE REGISTERED FOR<b> ${rollno}</b> on <b>${Date(Date.now()).toString().substring(0,24).trim()}</b></p>`)
+   }
+   else{
+      res.send("<p>ERROR</p>")
+   }
 })
 
 //end of form handling

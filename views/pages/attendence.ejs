@@ -12,6 +12,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
     }
 
     #reader__scan_region>img {
@@ -64,7 +65,7 @@
         color: white
     }
 
-    h4 {
+    h4,p {
         color: white;
     }
 
@@ -149,26 +150,33 @@
 
     function success(result) {
 
-        document.getElementById('result').innerHTML = `
-        <br><br>
-        <center><h2>Success!</h2></center>
-        <br>
-        <p><a id='details_bus' href="${result}">${result}</a></p>       
-        <br>
-        <h4>Your Today's Attendence has been registered</h4>
-        <br>        
-        <form method="post" action='attendence'>
+       // <!-- document.getElementById('result').innerHTML = `
+      // <br><br>
+       // <center><h2>Success!</h2></center>
+       // <br>
+       // <p><a id='details_bus' href="${result}">${result}</a></p>       
+       // <br>
+       // <h4>Your Today's Attendence has been registered</h4>
+      //<br>        
+        //<form method="post" action='attendence'>
           
-         <center> <button id="gps" type="submit"> Save Changes </button> </center>
-        </form>
-        `;
+        // <center> <button id="gps" type="submit"> Save Changes </button> </center>
+       // </form>
+       // `;
+       // scanner.clear();
+       // document.getElementById('reader').remove(); -->
 
+  var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+      document.getElementById("result").innerHTML =
+      this.responseText;
+  };
+  xhttp.open("POST", `/attendance`, true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("rollno="+result);
 
-
-
-
-        scanner.clear();
-        document.getElementById('reader').remove();
+  //scanner.clear();
+  //document.getElementById('reader').remove();
 
     }
 
