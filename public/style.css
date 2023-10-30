@@ -86,7 +86,20 @@ h2 {
     font-size: 1.2em;
     line-height: 57px;
 }
-
+#namewebsite{
+    font-size: x-large;
+    margin-left: 1rem;
+}
+.nameweb{
+    transition: all 400ms ease;
+}
+.nameweb:hover{
+    background-color: #1f1f38;
+    padding: 0 0.4rem;
+    color: #4db5ff;
+    border-radius: 0.5rem;
+    transition: all 400ms ease;
+}
 .RememberForgot {
     margin: -15px 0 15px;
     font-size: .9em;
@@ -94,11 +107,34 @@ h2 {
     display: flex;
     justify-content: center;
 }
-
+.pic{
+    border: 1.3px solid #1f1f38;
+    border-radius: 50%;
+    padding: 2px;
+    width: 3rem;
+    height: 3rem;
+ }
+ 
+ .pic>img {
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 3rem;
+    height: 3rem;
+    scale: 0.6;
+    object-fit: contain;
+    transition: all 200ms ease;
+ }
+ 
+ .pic>img:hover {
+    scale: 1;
+    padding-left: 4px;
+ }
 .RememberForgot label input {
     margin-right: 3px;
 }
-
+.wifully{
+    width: 100%;
+}
 .Link {
     color: aliceblue;
     text-decoration: none;
@@ -106,6 +142,10 @@ h2 {
 
 .Link:hover {
     text-decoration: underline;
+}
+.pinner{
+    padding: 3rem 6rem 0 3rem;
+    margin-right: 4rem;
 }
 
 button {
@@ -215,11 +255,7 @@ button {
     font-size: small;
 }
 
-.headlogo{
-    width: 25px;
-    height: 25px;
-    margin-right: 1rem;
-}
+
 .spac {
     margin-bottom: 2rem;
 }
@@ -236,29 +272,6 @@ button {
 .hl:hover {
     background-color: rgb(26, 33, 56);
     border-radius: 0.5rem;
-}
-
-.pic {
-    border: 1.5px solid var(--color-primary);
-    border-radius: 50%;
-    padding: 2px;
-    width: 3rem;
-    height: 3rem;
-}
-
-.pic>img {
-    margin-top: -2px;
-    margin-left: -2px;
-    width: 3rem;
-    height: 3rem;
-    scale: 0.6;
-    object-fit: contain;
-    transition: all 200ms ease;
-}
-
-.pic>img:hover {
-    scale: 1;
-    padding-left: 4px;
 }
 
 .pic>img {

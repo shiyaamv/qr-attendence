@@ -85,8 +85,8 @@
 
     .bgclr {
       background-color: #4db5ff;
-padding: 1rem;
-border-radius: 0.4rem;
+      padding: 1rem;
+      border-radius: 0.4rem;
       color: #1f1f38;
 
     }
@@ -145,6 +145,8 @@ border-radius: 0.4rem;
         <div id="reader"></div>
         <div id="result"></div>
       </div>
+      <h2 id="needtohide">Scan your QR code Above !</h2>
+
     </div>
   </div>
 
@@ -163,22 +165,7 @@ border-radius: 0.4rem;
     scanner.render(success, error);
 
     function success(result) {
-      console.log("2345678")
-      // <!-- document.getElementById('result').innerHTML = `
-      // <br><br>
-      // <center><h2>Success!</h2></center>
-      // <br>
-      // <p><a id='details_bus' href="${result}">${result}</a></p>       
-      // <br>
-      // <h4>Your Today's Attendence has been registered</h4>
-      // <br>        
-      //<form method="post" action='attendence'>
 
-      // <center> <button id="gps" type="submit"> Save Changes </button> </center>
-      // </form>
-      // `;
-      // scanner.clear();
-      // document.getElementById('reader').remove(); -->
 
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
@@ -196,6 +183,8 @@ border-radius: 0.4rem;
               `
         scanner.clear();
         document.getElementById('reader').remove();
+        document.getElementById('needtohide').remove();
+      
       };
       xhttp.open("POST", `/attendance`, true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
