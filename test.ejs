@@ -1,0 +1,27 @@
+<div className='body'>
+    <div className='LoginBox glow'>
+        <div className='te'>
+            <form action=''>
+                <h2>Login</h2>
+                <div className='InputBox'>
+                    <span className='Icon'></span>
+                    <input name="roll" onblur="validateemail()" type="email" required></input>
+                    <label>Email</label>
+                    <p id="emailerror" style="color: red;"></p>
+
+                </div>
+                <div className='InputBox'>
+                    <span className='Icon'></span>
+                    <input name="password" onblur="validatepassword()" type="password" required></input>
+                    <label>Password</label>
+                    <p id="passworderror" style="color: red;"></p>
+
+                </div>
+                <button type='submit'>Login</button>
+                <div className='RegisterLink'>
+                    <p>Don't have an account ? <a href="/Register" className='Reg'>Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
