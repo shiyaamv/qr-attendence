@@ -24,14 +24,14 @@ const userSchema = new Schema({
         required:true
     },
     attendance: [
-        {
+       {
             date: {
-                type: Date,
-                default: Date.now
+                default:Date.now(),
+                type: String,
             },
             isPresent: {
                 type: Boolean,
-                default: false
+                default: false,
             }
         }
     ]

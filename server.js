@@ -7,11 +7,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname,'/views'));
 app.use('/assets',express.static(__dirname+'/public'));
+const MONGOURI="mongodb+srv://Sanjeev:wolverine@cluster0.ix5odqw.mongodb.net/?retryWrites=true&w=majority";
+
 
 
 const session=require("express-session");
 const MongoDBSession=require("connect-mongodb-session")(session)
-const MONGOURI="mongodb+srv://Sanjeev:wolverine@cluster0.ix5odqw.mongodb.net/?retryWrites=true&w=majority";
 const colors=require("colors");
 const mongoose=require("mongoose");
 
@@ -179,8 +180,15 @@ catch(error){
 })
 app.post("/attendance",async(req,res)=>{
    const {rollno}=req.body;
-   const update=await UserModel.findOneAndUpdate({"rollno":rollno},{$set:{"attendance.isPresent":true}})
-   if(update){
+   const studentupdate=await UserModel.findOne({"rollno":rollno});
+if(Date(Date.now()).toString().substring(0,15).trim()===Date(studentupdate.attendance.date).toString().substring(0,15).trim()){
+   res.send(`<p>ALREADY ATTENDANCE REGISTERED FOR YOU TODAY</p>`)
+}
+   if(studentupdate){
+      studentupdate.attendance.push({
+         isPresent: true
+     });
+     await studentupdate.save();
       res.send(`<p>ATTENDANCE REGISTERED FOR<b> ${rollno}</b> on <b>${Date(Date.now()).toString().substring(0,24).trim()}</b></p>`)
    }
    else{
