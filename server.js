@@ -130,7 +130,9 @@ app.get('/dashboard/attendence', function(req, res) {
 app.get('/dashboard/location',function(req,res){
    res.render('pages/location',{auth:req.session.isAuth,data:req.session.data,admin:req.session.isAdmin});
 });
-
+app.get('/dashboard/support',function(req,res){
+   res.render('pages/support',{auth:req.session.isAuth,data:req.session.data,admin:req.session.isAdmin});
+});
 //end of routes
 
 //form handling
