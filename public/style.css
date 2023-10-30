@@ -432,7 +432,12 @@ h6{
 .box-info li .text p {
 	color: var(--dark);	
 }
-
+.mauto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+}
 
 .bottomfl{
     display: flex;
@@ -467,8 +472,16 @@ h6{
     margin-top: 4rem;
 }
 .td{
-    width: 250px;
+    width: 170px;
     color: white;
+    text-align: left;
+    margin-left: 5rem;
+}
+.tdval{
+    width: 250px;
+    text-align: left;
+    margin-left: 5rem;
+
 }
 .roun{
     border-radius: 10px;

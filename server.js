@@ -124,7 +124,11 @@ app.get('/dashboard/details', function(req, res) {
    res.render('pages/details',{auth:req.session.isAuth,data:req.session.data,admin:req.session.isAdmin});
 });
 app.get('/dashboard/attendence', function(req, res) {
-   res.render('pages/attendence');
+   res.render('pages/attendence',{auth:req.session.isAuth,data:req.session.data,admin:req.session.isAdmin});
+});
+
+app.get('/dashboard/location',function(req,res){
+   res.render('pages/location',{auth:req.session.isAuth,data:req.session.data,admin:req.session.isAdmin});
 });
 
 //end of routes
@@ -181,7 +185,7 @@ catch(error){
 app.post("/attendance",async(req,res)=>{
    const {rollno}=req.body;
    console.log(rollno);
-   const studentupdate=await UserModel.findOne({"rollno":rollno});
+   const studentupdate=await UserModel.findOne({"rollno":req.session.data.rollno});
    var k=new Date();
       k.setHours(0,0,0,0);
       k=k.getTime()

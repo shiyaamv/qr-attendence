@@ -23,25 +23,25 @@
       </div>
       <h6 class='heading'>INFORMATION :</h6>
       <div class='flc'>
-        <a href="" class="activee"  onclick="selectDiv(this)">
+        <a href="/dashboard/location" class="activee" onclick="selectDiv(this)">
           <div class='flr'>
             <img class='icon' src='' alt></img>
-            <h5>Check Status</h5>
+            <h5>Check Bus</h5>
           </div>
         </a>
-        <a href="" class="activee"  onclick="selectDiv(this)">
+        <a href="" class="activee" onclick="selectDiv(this)">
           <div class='flr'>
             <img class='icon' src='' alt></img>
             <h5>Alert</h5>
           </div>
         </a>
-        <a href="/dashboard/attendence"   onclick="selectDiv(this)" class="activee">
+        <a href="/dashboard/attendence" onclick="selectDiv(this)" class="activee">
           <div class='flr'>
             <img class='icon' src='' alt></img>
             <h5>My Attendence</h5>
           </div>
         </a>
-        <a href="" class="activee"  onclick="selectDiv(this)">
+        <a href="" class="activee" onclick="selectDiv(this)">
           <div class='flr'>
             <img class='icon' src='' alt></img>
             <h5>Help / Support</h5>
@@ -49,93 +49,98 @@
         </a>
       </div>
     </div>
-   
 
-      <div class="bottomfl">
 
-        <h1>
-          <%= data.name %>
-        </h1>
+    <div class="bottomfl">
 
-        <ul class="box-info">
+      <h1>
+        <%= data.name %>
+      </h1>
 
-          <li>
-            <i class='bx bxs-calendar-check'></i>
-            <span class="text">
-              <h3>9.60</h3>
-              <p>CGPA</p>
-            </span>
-          </li>
-          <li>
-            <i class='bx bxs-group'></i>
-            <span class="text">
-              <h3>100%</h3>
-              <p>Attendence</p>
-            </span>
-          </li>
-          <li>
-            <i class='bx bxs-dollar-circle'></i>
-            <span class="text">
-              <h3>18</h3>
-              <p>Project Count</p>
-            </span>
-          </li>
-          <li>
-            <i class='bx bxs-group'></i>
-            <span class="text">
-              <h3>2834</h3>
-              <p>Visited</p>
-            </span>
-          </li>
-        </ul>
+      <ul class="box-info">
 
-        <div class=" my-3 flexee aut">
-          <div>
-            <img class="roun" src="https://www.rajalakshmi.org/QRCode/img/<%= data.rollno %>.jpg" alt="IDCARDPhoto"><br>
-          </div>
-          <div class="tab">
-            <h5>Short Info </h5>
-            <table class="widfu">
-              <tr>
-                <td>
-                  <h2 class="td">Name :</h2>
-                </td>
-                <td>
-                  <h2>
-                    <%= data.name%>
-                  </h2>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h2 class="td">Dept :</h2>
-                </td>
-                <td>
-                  <h2>CSE</h2>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h2 class="td">Roll :</h2>
-                </td>
-                <td></td>
-              </tr>
-              </tr>
-              <td>
-                <h2 class="td">Bus :</h2>
-              </td>
-              <td></td>
-              </tr>
-            </table>
-          </div>
+        <li>
+          <i class='bx bxs-calendar-check'></i>
+          <span class="text">
+            <h3>9.60</h3>
+            <p>CGPA</p>
+          </span>
+        </li>
+        <li>
+          <i class='bx bxs-group'></i>
+          <span class="text">
+            <h3>100%</h3>
+            <p>Attendence</p>
+          </span>
+        </li>
+        <li>
+          <i class='bx bxs-dollar-circle'></i>
+          <span class="text">
+            <h3>18</h3>
+            <p>Project Count</p>
+          </span>
+        </li>
+        <li>
+          <i class='bx bxs-group'></i>
+          <span class="text">
+            <h3>2834</h3>
+            <p>Visited</p>
+          </span>
+        </li>
+      </ul>
+
+      <div class=" my-3 flexee aut">
+        <div>
+          <img class="roun" src="https://www.rajalakshmi.org/QRCode/img/<%= data.rollno %>.jpg" alt="IDCARDPhoto"><br>
         </div>
-
-
-
-
-
-
+        <div class="tab">
+          <h5>Short Info </h5>
+          <table class="widfu">
+            <tr>
+              <td>
+                <h2 class="td">Name </h2>
+              </td>
+              <td>
+                <h2 class="tdval">
+                  : <%= data.name %>
+                </h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2 class="td">Deptartment </h2>
+              </td>
+              <td>
+                <h2 class="tdval">: CSE</h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2 class="td">Roll No</h2>
+              </td>
+              <td>
+                <h2 class="tdval">: <%= data.rollno %>
+                </h2>
+              </td>
+            </tr>
+            </tr>
+            <td>
+              <h2 class="td">Bus No</h2>
+            </td>
+            <td>
+              <h2 class="tdval">: </h2>
+            </td>
+            </tr>
+          </table>
+        </div>
       </div>
+
+
+
+
+
+
+    </div>
 
 
   </div>
