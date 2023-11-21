@@ -26,10 +26,10 @@
                         <h5 class="select">Check Bus</h5>
                     </div>
                 </a>
-                <a href="" class="activee" onclick="selectDiv(this)">
+                <a href="/dashboard/history" class="activee" onclick="selectDiv(this)">
                     <div class='flr'>
                         <img class='icon' src='' alt></img>
-                        <h5>Alert</h5>
+                        <h5>History</h5>
                     </div>
                 </a>
                 <a href="/dashboard/attendence" onclick="selectDiv(this)" class="activee">
@@ -47,10 +47,11 @@
             </div>
         </div>
         <div class="wifull my-4 py-2">
-            <h2 class="text-white mb-4">Your Bus is Currently residing in..</h2>
+            <h2 class="text-white mb-4">Your Bus <%= Bus.name %> is Currently residing in.. </h2>
+
             <div class="mauto">
                 <iframe width="90%" height="500" class="mauto"
-                    src="https://maps.google.com/maps?q=13.0085,80.0035&output=embed"></iframe>
+                    src="https://maps.google.com/maps?q=<%= Bus.lat %>,<%= Bus.lon %>&output=embed"></iframe>
             </div>
         </div>
     </div>

@@ -15,6 +15,11 @@
 </head>
 
 <body>
+	<style>
+		.dk{
+			color: black! important;
+		}
+	</style>
 	<%- include('../components/header',{title:'Laundry-Homepage',auth:auth,data:data,admin:admin});%>
 		<div class="flr">
 
@@ -42,12 +47,12 @@
 							<h5>Check Bus</h5>
 						</div>
 					</a>
-					<a href="" class="activee" onclick="selectDiv(this)">
+					<a href="/dashboard/history" class="activee" onclick="selectDiv(this)">
 						<div class='flr'>
-							<img class='icon' src='' alt></img>
-							<h5>Alert</h5>
+						  <img class='icon' src='' alt></img>
+						  <h5>History</h5>
 						</div>
-					</a>
+					  </a>
 					<a href="/dashboard/attendence" onclick="selectDiv(this)" class="activee">
 						<div class='flr'>
 							<img class='icon' src='' alt></img>
@@ -78,30 +83,30 @@
 												<div id="form-message-success" class="mb-4 w-100 text-center">
 													Your message was sent, thank you!
 												</div>
-												<form method="POST" id="contactForm" name="contactForm"
-													class="contactForm">
+												<form method="GET" id="contactForm" name="contactForm"
+													class="contactForm" action="/dashboard/support">
 													<div class="row">
 														<div class="col-md-12">
 															<div class="form-group">
-																<input type="text" class="form-control" name="name"
+																<input type="text" class="form-control dk" name="name"
 																	id="name" placeholder="Name">
 															</div>
 														</div>
 														<div class="col-md-12">
 															<div class="form-group">
-																<input type="email" class="form-control" name="email"
+																<input type="email" class="form-control dk" name="email"
 																	id="email" placeholder="Email">
 															</div>
 														</div>
 														<div class="col-md-12">
 															<div class="form-group">
-																<input type="text" class="form-control" name="subject"
+																<input type="text" class="form-control dk" name="subject"
 																	id="subject" placeholder="Subject">
 															</div>
 														</div>
 														<div class="col-md-12">
 															<div class="form-group">
-																<textarea name="message" class="form-control"
+																<textarea name="message" class="form-control dk"
 																	id="message" cols="30" rows="8"
 																	placeholder="Message"></textarea>
 															</div>

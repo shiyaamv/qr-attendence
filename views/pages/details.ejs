@@ -31,12 +31,12 @@
                         <h5>Check Bus</h5>
                     </div>
                 </a>
-                <a href="" class="activee" onclick="selectDiv(this)">
+                <a href="/dashboard/history" class="activee" onclick="selectDiv(this)">
                     <div class='flr'>
-                        <img class='icon' src='' alt></img>
-                        <h5>Alert</h5>
+                      <img class='icon' src='' alt></img>
+                      <h5>History</h5>
                     </div>
-                </a>
+                  </a>
                 <a href="/dashboard/attendence" onclick="selectDiv(this)" class="activee">
                     <div class='flr'>
                         <img class='icon' src='' alt></img>
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="wifull pinner">
-            <form action="details" method="post">
+            <form method="POST" action="/details" >
                 <div class="tab-pane fade active show" id="account-general">
 
 
@@ -66,11 +66,11 @@
                             <div class="flr gp">
                                 <div class="wifully">
                                     <label class="form-label text-white">Roll no</label>
-                                    <input type="text" class="form-control" name="rollno" value="<%= data.rollno %>">
+                                    <input type="text" class="form-control" name="" value="<%= data.rollno %>">
                                 </div>
                                 <div class="wifully">
                                     <label class="form-label text-white">CGPA</label>
-                                    <input type="text" class="form-control" name="rollno" value="<%= data.rollno %>">
+                                    <input type="text" class="form-control" name="cgpa" value="8.5">
                                 </div>
                             </div>
 
